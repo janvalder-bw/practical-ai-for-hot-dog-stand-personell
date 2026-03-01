@@ -6,16 +6,34 @@ paginate: true
 style: |
   @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 
+  :root {
+    --bg: #0d1117;
+    --fg: #e6edf3;
+    --err: #ff6b6b;
+  }
+
   section {
-    background-color: #0d1117;
-    color: #e6edf3;
+    background-color: var(--bg);
+    color: var(--fg);
     font-family: 'JetBrains Mono', 'Courier New', monospace;
     padding: 70px 80px;
     font-size: 1.05em;
   }
 
+  section::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    bottom: 24px;
+    left: 24px;
+    border: 1px solid rgba(230, 237, 243, 0.12);
+    pointer-events: none;
+    z-index: 0;
+  }
+
   h1 {
-    color: #00ff41;
+    color: var(--fg);
     font-size: 2.6em;
     line-height: 1.15;
     font-weight: 700;
@@ -23,35 +41,35 @@ style: |
   }
 
   h2 {
-    color: #00ff41;
+    color: var(--fg);
     font-size: 1.8em;
     font-weight: 700;
   }
 
   h3 {
-    color: #8b949e;
+    color: var(--fg);
     font-size: 0.85em;
     font-weight: 400;
     margin-top: 0;
   }
 
   p, li {
-    color: #e6edf3;
+    color: var(--fg);
     line-height: 1.7;
   }
 
   strong {
-    color: #ff6b6b;
+    color: var(--err);
   }
 
   em {
-    color: #8b949e;
+    color: rgba(230, 237, 243, 0.5);
     font-style: italic;
   }
 
   code {
     background: #161b22;
-    color: #79c0ff;
+    color: var(--fg);
     padding: 0.2em 0.4em;
     border-radius: 4px;
     font-size: 0.88em;
@@ -59,14 +77,14 @@ style: |
 
   pre {
     background: #161b22;
-    border-left: 3px solid #00ff41;
+    border-left: 3px solid rgba(230, 237, 243, 0.25);
     padding: 1em 1.5em;
     border-radius: 6px;
   }
 
   pre code {
     background: transparent;
-    color: #e6edf3;
+    color: var(--fg);
     font-size: 0.88em;
     line-height: 1.7;
   }
@@ -78,7 +96,7 @@ style: |
 
   ul li::before {
     content: '> ';
-    color: #00ff41;
+    color: rgba(230, 237, 243, 0.4);
   }
 
   section.chapter {
@@ -90,13 +108,12 @@ style: |
   }
 
   section.chapter h1 {
-    color: #e6edf3;
+    color: var(--fg);
     font-size: 3.2em;
     line-height: 1.1;
   }
 
   section.chapter h3 {
-    color: #30363d;
     font-size: 0.75em;
     margin-bottom: 0.5em;
     text-transform: uppercase;
@@ -110,9 +127,13 @@ style: |
   }
 
   section.lesson h1 {
-    color: #ff6b6b;
+    color: var(--err);
     font-size: 2.4em;
     line-height: 1.2;
+  }
+
+  section.lesson::after {
+    border-color: rgba(255, 107, 107, 0.2);
   }
 
   section.title {
@@ -128,7 +149,7 @@ style: |
   }
 
   footer {
-    color: #30363d;
+    color: rgba(230, 237, 243, 0.15);
     font-size: 0.6em;
     font-family: 'JetBrains Mono', monospace;
   }
@@ -154,12 +175,12 @@ Let the title breathe. The hot dog stand is a real ambition — Alpine sabbatica
 
 Half-sabbatical since 9/25.
 
-One part-time project. Daily experimentation.
+Exploring Italy. Enjoying Austria. One part-time project. Daily experimentation.
 *Building things, breaking things, learning what's real.*
 
 <!--
 SPEAKER NOTES:
-You probably know me, so I'll keep this short. Left Livesport/Flashscore after several years — global sports media, 30M+ users, design leadership. Since September I've been on half-sabbatical: one part-time project and deliberate daily experimentation with AI. Not watching demos. Not reading posts. Building. This talk is what I found.
+You probably know me, so I'll keep this short. Left Livesport/Flashscore after several years — global sports media, 100M+ users, design leadership. Since September I've been on half-sabbatical: one part-time project and deliberate daily experimentation with AI. Not watching demos. Not reading posts. Building. This talk is what I found.
 
 My learning loop, for context: pick up signal (yes, Twitter — most pathetic, fastest), try it immediately, map the limits, file it for later. No courses. Just build something dumb and real.
 -->
@@ -176,7 +197,7 @@ My learning loop, for context: pick up signal (yes, Twitter — most pathetic, f
 
 # I stopped opening Figma
 
-*[Figma stock chart — peaked ~$120, now $22.53, Feb 2026]*
+*[Peaked ~$120, now $29.39]*
 
 <!--
 SPEAKER NOTES:
@@ -210,7 +231,7 @@ Figma is squares. The product is code. We've known this for years — the gap be
 I wanted daily lunch specials in Slack.
 
 Scraping restaurants: *easy*
-Slack API: *easy*
+Slack integration: *easy*
 GitHub Actions hosting: *easy*
 
 <!--
@@ -220,12 +241,12 @@ Classic sabbatical project. Automatic daily lunch menu from nearby restaurants t
 
 ---
 
-# What broke first
+# What broke
 
 **Non-determinism.**
 
 ```
-"Read this HTML, return clean JSON."
+"Read this HTML/IMG/PDF, return simplified menu text."
 
   Run 1: ✓   Run 2: ✓   Run 3: ✗
   Run 4: ✓   Run 5: ✗   Run 6: ✗
@@ -242,7 +263,6 @@ The AI part — parsing messy restaurant HTML into clean unified format — this
 
 <!-- _class: lesson -->
 
-# Lesson:
 # AI matters only
 # in real workflows.
 
@@ -278,15 +298,16 @@ Specific office problem: knowing at a glance which meeting rooms are free. Stand
 
 ---
 
-# *[Box reveal]*
+# ~~Evo~~Valderoko
 
-*AI wrote the code.*
+AI wrote the code.
+
 *What would have taken weeks took days.*
 
 <!--
 SPEAKER NOTES:
 [Show the actual device — Raspberry Pi or equivalent]
-I built this. A fraction of the cost. The point isn't the hardware. The point is: with AI assistance, a UX person with basic coding literacy can build functional hardware products. This would have been a 3-week googling expedition before. It took days.
+I built this. A fraction of the cost. The point isn't the hardware. The point is: with AI assistance, a UX person with basic coding literacy can build functional hardware products. This would have been a 3-week googling expedition before. It took hours.
 [ADD YOUR BOX PHOTO HERE]
 -->
 
@@ -294,7 +315,6 @@ I built this. A fraction of the cost. The point isn't the hardware. The point is
 
 <!-- _class: lesson -->
 
-# Lesson:
 # Waterfall is back,
 # baby.
 
@@ -309,17 +329,16 @@ This surprised me. I'm an agile person. But with AI as the builder, I kept findi
 
 <!-- _class: lesson -->
 
-# Lesson:
 # AI reduces execution cost,
 # not thinking cost.
 
-*"Docker? Three clicks now."*
+*"Deploy to production? Three clicks now."*
 
 *The premium on judgment just went up.*
 
 <!--
 SPEAKER NOTES:
-I used to avoid Docker. Not anymore. I used to dread anything requiring API setup. Not anymore. AI collapsed the execution cost of technical things towards zero. But it did not reduce the thinking cost. Knowing what to build, why, what the edge cases are, what good looks like — that's still entirely on you. The tax on execution went down. The premium on taste and clarity went up. Very good news for designers, if you're willing to act on it.
+I used to avoid Docker. Not anymore. I used to dread anything requiring API setup. Not anymore. AI collapsed the execution cost of technical things towards zero. But it did not reduce the thinking cost. Knowing what to build, why, what the edge cases are, what good looks like — that's still entirely on you. The tax on execution went down. The premium on taste and clarity went up. Very good news for UXers, if you're willing to act on it.
 -->
 
 ---
@@ -345,11 +364,11 @@ This is roughly what happened when I started playing with agents.
 # I tried it.
 # I switched away.
 
-M1 Air. Local + remote models.
+16 gig M1 Air. Local + remote models.
 Booked a restaurant. Argued with my teammate.
 Sent messages to friends on Messenger.
 
-*Impressive. And then the bill arrived.*
+*Impressive. Didn't like the bill.*
 
 <!--
 SPEAKER NOTES:
@@ -369,7 +388,7 @@ Tabs open. Loops running. Money spending.
 
 <!--
 SPEAKER NOTES:
-This framing comes from Will Manidis. It's the sharpest thing I've read about AI this year. Agents are extraordinary at producing outputs. But outputs are not outcomes. The product improving, the user's life getting better, the business actually growing — those are outcomes. And they're still on you. The danger with agents is confusing high output velocity with actually getting somewhere. Also: when you add up the cost of running chains of agents all day, you're approaching the monthly salary of a part-time human assistant — who at least has judgment.
+This framing comes from Will Manidis. It's the sharpest thing I've read about AI this year. Agents are extraordinary at producing outputs. But outputs are not outcomes. The product improving, the user's life getting better, the business actually growing — those are outcomes. And they're still on you. The danger with agents is confusing high output velocity with actually getting somewhere. Also: when you add up the cost of running chains of agents all day, you're approaching the monthly salary of a human — who at least has judgment.
 -->
 
 ---
@@ -408,7 +427,7 @@ Orbiso is the project I work on part-time as product/design lead. It's a platfor
 
 <!--
 SPEAKER NOTES:
-First thing we tried: MCP — Model Context Protocol. The hot new thing for giving AI structured access to your systems. We set it up. I hated it. Too much magic. Too much configuration. Too many silent failures. Felt like the early days of microservices: theoretically elegant, practically a debugging nightmare. The bigger conceptual problem: MCP connects your AI to separate silos. It doesn't unify them. We needed something different.
+First thing we tried: MCP — Model Context Protocol. I hated it. Too much magic. Too much configuration. Too many silent failures. Felt like the early days of microservices: theoretically elegant, practically a debugging nightmare. The bigger conceptual problem: MCP connects your AI to separate silos. It doesn't unify them. We needed something different.
 -->
 
 ---
@@ -420,12 +439,14 @@ First thing we tried: MCP — Model Context Protocol. The hot new thing for givi
 ```
 /orbiso
   /docs        ← product knowledge
-  /code        ← the product
+  /app         ← the product
   /agents      ← AI instructions
-  /decisions   ← why we chose what we chose
+  /learnings   ← why we chose what we chose
 ```
 
 One body. One truth. Everyone breathes the same air.
+
+*And it's in GIT*
 
 <!--
 SPEAKER NOTES:
@@ -550,7 +571,7 @@ Not a prediction. This is already happening in the teams moving fastest. The des
 You don't need M4 Max Studio.
 You don't need an enterprise AI budget.
 
-You need **a good recipe.**
+You need **to get cookin.**
 
 *And soon: your own kitchen.*
 
@@ -575,8 +596,7 @@ The hot dog stand isn't glamorous. But the food is hot, it's yours, and you know
 *This presentation is a Markdown file in a GitHub repo.*
 *Presented from Cursor. No Figma was opened.*
 
-`github.com/janvalder-bw/`
-`practical-ai-for-hot-dog-stand-personell`
+`github.com/janvalder-bw/practical-ai-for-hot-dog-stand-personell`
 
 <!--
 SPEAKER NOTES:
