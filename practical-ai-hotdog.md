@@ -70,9 +70,9 @@ style: |
   code {
     background: #161b22;
     color: var(--fg);
-    padding: 0.2em 0.4em;
+    padding: 0.3em 0.6em;
     border-radius: 4px;
-    font-size: 0.88em;
+    font-size: 1.2em;
   }
 
   pre {
@@ -85,8 +85,8 @@ style: |
   pre code {
     background: transparent;
     color: var(--fg);
-    font-size: 0.88em;
-    line-height: 1.7;
+    font-size: 1.2em;
+    line-height: 1.8;
   }
 
   ul {
@@ -234,7 +234,8 @@ SPEAKER NOTES:
 Half-sabbatical since 9/25.
 
 Exploring Italy. Enjoying Austria. One part-time project. Daily experimentation.
-*Building things, breaking things, learning what's real.*
+Building things, breaking things, learning what's real.
+*Dreaming about my future job at hot-dog stand.*
 
 <!--
 SPEAKER NOTES:
@@ -243,6 +244,7 @@ SPEAKER NOTES:
 - Daily AI experimentation, not passive content.
 - Building, breaking, shipping.
 - This talk is what proved real.
+- Obviously still dreaming about my future job at the foot of austrian ski slope
 -->
 
 ---
@@ -273,7 +275,7 @@ SPEAKER NOTES:
 
 <!-- _class: example -->
 
-How I learn: Twitter > Try > Add to toolstack OR Trash
+How I learn: Signal > Try > Map limits > Keep OR Trash
 
 <!--
 SPEAKER NOTES:
@@ -398,7 +400,7 @@ SPEAKER NOTES:
 
 AI wrote the code.
 
-*What would have taken weeks took days.*
+*What would have taken weeks took HOURS.*
 
 <!--
 SPEAKER NOTES:
@@ -453,7 +455,7 @@ SPEAKER NOTES:
 ### Chapter 02
 
 # Agents Enter
-# the Chat
+# the Chat 🦞
 
 
 ---
@@ -506,15 +508,13 @@ SPEAKER NOTES:
 
 <!-- _class: example -->
 
-ORBISO-BW-M - ProviderNotFoundException: Error: Could not find the correct Provider<ThemeProvider> above this OrbisoAppRouter...
+✉ ORBISO-BW-M - ProviderNotFoundException: Error: Could not find the correct Provider<ThemeProvider> above this OrbisoAppRouter...
 
-ORBISO-BW-G - FormControlNotFoundException: FormControlNotFoundException: control with name: 'firstName' not found.
+✉ ORBISO-BW-G - FormControlNotFoundException: FormControlNotFoundException: control with name: 'firstName' not found.
 
-ORBISO-BW-3 - AppUnknownError: AppError.unknown(message: Failed to load env file: Instance of 'FileNotFoundError')
+✉ ORBISO-BW-3 - AppUnknownError: AppError.unknown(message: Failed to load env file: Instance of 'FileNotFoundError')
 
-ORBISO-BW-K - FlutterError: A RenderFlex overflowed by 0.333 pixels on the bottom.
-
-→
+✉ ORBISO-BW-K - FlutterError: A RenderFlex overflowed by 0.333 pixels on the bottom.
 
 🗨 Tarzan: 4 Sentry emails landed. Nothing critical — marked as read.
 
@@ -749,13 +749,17 @@ SPEAKER NOTES:
 
 ---
 
-# Remember Axure?
+# Everything moves to repo
+# and design is next
 
 ```
-Axure prototype         → thrown away
-Figma mockup            → re-typed in code
-Design in code          → IS the product
+Axure                   → thrown away
+Figma                   → copypasted to code
+Make                    → translated to divs
 ```
+Code. Is. The. Product.
+
+
 
 <!--
 SPEAKER NOTES:
@@ -774,7 +778,7 @@ SPEAKER NOTES:
 
 *Not because AI happened.*
 
-*Because the concept was wrong.*
+*Because the concept was always wrong.*
 
 <!--
 SPEAKER NOTES:
@@ -787,10 +791,10 @@ SPEAKER NOTES:
 
 ---
 
-# The future tool
+# Figma of the future
 # looks like Storybook
 
-Design layer **on top of code.**
+Design layer **on top of real code.**
 
 Not rectangles translated to divs.
 Components documented and demonstrated
@@ -813,12 +817,12 @@ SPEAKER NOTES:
 # over the wall
 
 ```
-Person 1 ideates, vibecodes, tests
-  → Person 2 designs within DS constraints
-    → Person 3 implements properly
+Role 1 ideates, vibecodes, tests, finetunes
+  → Role 2 provides final design within DS constraints
+    → Role 3 implements properly
 ```
 
-*Daily cowork. Same repo. Same context.*
+Daily cowork. One repo. Same context.
 *Each role, AI-augmented.*
 
 <!--
@@ -832,21 +836,26 @@ SPEAKER NOTES:
 
 ---
 
-# Siloed companies:
-# **you are in danger.**
+<!-- _class: lesson -->
 
-Departments. Separate tools. Separate knowledge.
-Clean handoffs. Defined boundaries.
+# ~~Design process is dead~~
 
-*This org structure cannot run this workflow.*
+```
+1. Empathize        → Research and analysis
+2. Define           → Synthesis and documentation
+3. Ideate           → Still some space for huans :)
+4. Prototype        → Vibe Coding in Monorepo
+5. Test             → Usability and heuristics
+---
+6. Craft            → UI engineering, design systems 
+7. Ship             → Final implementation, QA
+```
+
+
 
 <!--
 SPEAKER NOTES:
-- Warning: siloed orgs cannot run this workflow.
-- Department/tool boundaries block shared context.
-- You cannot get monorepo truth with isolated systems.
-- Handoff-first structures lose speed and coherence.
-- Competitive gap is forming now, not later.
+- Tim Brown — Change by Design / IDEO / Stanford design institute
 -->
 
 ---
@@ -854,10 +863,10 @@ SPEAKER NOTES:
 # The new minimum
 
 ```
-Git                  → you version everything
+Code orientation     → you read it, you navigate it
 Repos                → you live where the work lives
 Markdown             → you write for humans AND machines
-Code orientation     → you read it, you navigate it
+Git                  → you version everything
 ```
 
 *Not optional. Table stakes.*
@@ -892,6 +901,27 @@ SPEAKER NOTES:
 
 ---
 
+<!-- _class: lesson -->
+
+# Siloed companies:
+# you are in danger.
+
+Departments. Separate tools. Separate knowledge.
+Clean handoffs. Defined boundaries.
+
+*This org structure cannot run this workflow.*
+
+<!--
+SPEAKER NOTES:
+- Warning: siloed orgs cannot run this workflow.
+- Department/tool boundaries block shared context.
+- You cannot get monorepo truth with isolated systems.
+- Handoff-first structures lose speed and coherence.
+- Competitive gap is forming now, not later.
+-->
+
+---
+
 # The Hot-Dog Stand Lesson
 
 You don't need M4 Max Studio.
@@ -914,16 +944,17 @@ SPEAKER NOTES:
 <!-- _class: chapter -->
 ### fin
 
-# Questions?
+# Oh and I'm looking for a Senior Engineer (Full Stack)
 
-### LinkedIn · @janvalder
-### Twitter · @honzavalder
+## LinkedIn @janvalder | Twitter @honzavalder
 
-*This presentation is a Markdown file in a GitHub repo.*
-*Presented from Cursor. No Figma was opened.*
+```
+github.com/janvalder-bw/practical-ai-for-hot-dog-stand-personell
+```
+
+*This presentation is a Markdown file in a GitHub repo. No Figma was opened.*
 *Thx Claude Opus for help and feedback.*
 
-`github.com/janvalder-bw/practical-ai-for-hot-dog-stand-personell`
 
 <!--
 SPEAKER NOTES:
