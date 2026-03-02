@@ -1,0 +1,9 @@
+# Local caches
+.npm-cache/
+
+# OS noise
+.DS_Store
+
+# Ignore local IDE settings but keep shared workspace config
+.vscode/*
+!.vscode/settings.json

@@ -1,0 +1,12 @@
+{
+  "markdown.marp.enableHtml": true,
+  "files.exclude": {
+    "**/.npm-cache": true
+  },
+  "search.exclude": {
+    "**/.npm-cache": true
+  },
+  "files.watcherExclude": {
+    "**/.npm-cache/**": true
+  }
+}

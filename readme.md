@@ -24,6 +24,7 @@ Honza covers the past year as a series of concrete situations: where AI stopped 
 /
 ├── README.md                      ← you are here
 ├── practical-ai-hotdog.md         ← the presentation (Marp)
+├── practical-ai-hotdog-article.md ← article version for LinkedIn / Medium
 └── agent.md                       ← how this was built (AI collaboration log)
 ```
 
@@ -46,6 +47,14 @@ marp practical-ai-hotdog.md --html   # export as HTML
 marp practical-ai-hotdog.md --pdf    # export as PDF
 marp practical-ai-hotdog.md          # open as presentation
 ```
+
+---
+
+## Article version
+
+Long-form version of the talk:
+
+- `practical-ai-hotdog-article.md`
 
 ---
 

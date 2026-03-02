@@ -1,3 +1,86 @@
+# AI Collaboration Log
+
+This document is a publishable, human-readable log of how this repo was built with AI support.
+
+---
+
+## Project
+
+- **Talk:** Practical AI for Hot-Dog Stand Personnel
+- **Speaker:** Honza Valder
+- **Format:** Marp slides (`practical-ai-hotdog.md`) + long-form article (`practical-ai-hotdog-article.md`)
+- **Goal:** Use the medium as part of the message: design/product work moves into repos, code context, and shared AI workflows
+
+---
+
+## What Was Produced
+
+- Slide deck with full narrative arc and chapter structure
+- Speaker notes for every slide
+- Cohesive three-color visual system (`bg`, `content`, `error/lesson`)
+- Consistent framing style (ASCII/terminal-like border treatment)
+- Local video embed for the "Agents Enter the Chat" section
+- Companion article version of the talk for publishing
+
+---
+
+## Process (Condensed Timeline)
+
+### 1) Foundation
+
+- Reviewed source deck skeleton (PDF export)
+- Preserved core storyline and rebuilt as Marp markdown
+- Aligned format with thesis: work in repo, not in separate slide/design silos
+
+### 2) Narrative Expansion
+
+- Added concrete case stories (Menicka, hardware build, agent workflow, Orbiso)
+- Strengthened key arguments:
+  - outputs vs outcomes
+  - monorepo as shared context
+  - no more throw-over-the-wall workflow
+  - role and skill shift for AI-augmented teams
+
+### 3) Design Finetuning
+
+- Reduced visual language to 3 core colors
+- Improved consistency of headings, code blocks, and lesson emphasis
+- Added slide frame aesthetic and cleaned section pacing
+- Reworked example-slide inverse style for readability
+
+### 4) Delivery Hardening
+
+- Fixed Marp HTML rendering constraints for embedded content
+- Replaced brittle tweet embed with direct local video embed (`video.mp4`)
+- Added source credit (`@bibforsure`) directly on slide
+
+### 5) Distribution Assets
+
+- Created article file from slide story + speaker notes
+- Updated repo docs so slides and article are discoverable
+
+---
+
+## Key Editorial Decisions
+
+- Keep tone direct, practical, and non-corporate
+- Prioritize real workflow evidence over abstract AI claims
+- Keep "lesson" slides explicit and memorable
+- Preserve unresolved problems (docs sync, sandboxing, workflow friction) for credibility
+
+---
+
+## Current Repo State
+
+- `practical-ai-hotdog.md` is the source of truth for the presentation
+- `practical-ai-hotdog-article.md` is the publishable article adaptation
+- `README.md` explains how to view/export slides and where to find the article
+
+---
+
+## Notes
+
+- This log intentionally omits raw chat-level back-and-forth and keeps only decisions/results relevant to collaborators and readers of the repository.
 # agent.md
 
 > How this presentation was built — a log of the AI collaboration process.
